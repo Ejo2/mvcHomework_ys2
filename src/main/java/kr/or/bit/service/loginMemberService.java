@@ -25,6 +25,8 @@ public class loginMemberService implements Action{
          if (koreaMember != null) {
              HttpSession session = request.getSession();
              session.setAttribute("userid", id);
+             System.out.println(id);
+             
              forward.setRedirect(true);
              forward.setPath("Ex02_JDBC_Main.jsp");
          } else {

@@ -14,7 +14,7 @@ import kr.or.bit.dao.MemberDao;
 public class deleteMemberService implements Action{
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response){
-    	HttpSession session = null;
+		HttpSession session = request.getSession();
     	ActionForward forward = null;
     	System.out.println(request.getParameter("id"));
 		try {
@@ -33,9 +33,9 @@ public class deleteMemberService implements Action{
 	    		//TODO Path 확인해서 수정
 				int result = dao.deleteMember(request.getParameter("id"));
 				if(result>0) {
-					forward.setPath("Ex03_Memberlist.jsp"); //멤버리스트 화면 
+					forward.setPath("detailMemberView.do"); //멤버리스트 화면
 				}else {
-					forward.setPath("Ex03_MemberDelete.jsp"); //Delete 화면 
+					forward.setPath("deleteMember.do?id="+request.getParameter("id")); //Delete 화면
 				}				
 	    	}
 						 

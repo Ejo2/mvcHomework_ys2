@@ -14,12 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 public class editOkMemberService implements Action{
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response){
+        
         ActionForward forward = new ActionForward();
         String id = request.getParameter("id");
         String name = request.getParameter("name");
         int age = Integer.parseInt(request.getParameter("age"));
         String email = request.getParameter("email");
         String gender = request.getParameter("gender");
+        String ip = request.getRemoteAddr();
         
         MemberDao dao = new MemberDao();
         KoreaMember dto = new KoreaMember();
@@ -29,15 +31,18 @@ public class editOkMemberService implements Action{
         dto.setAge(age);
         dto.setEmail(email);
         dto.setGender(gender);
+        dto.setIp(ip);
         
         int result = dao.updateMember(dto);
+    
+        System.out.println("수정 dto : " + dto);
         
         String msg = "";
         String url = "";
         
         if (result > 0){
             msg = "수정성공";
-            url = "memberList.do";
+            url = "detailMemberView.do";
         }else{
             msg = "수정실패";
             url = "/Ex02_JDBC_Main.jsp";
@@ -45,7 +50,7 @@ public class editOkMemberService implements Action{
         
         request.setAttribute("board_msg", msg);
         request.setAttribute("board_url", url);
-    
+        
         forward.setRedirect(false);
         forward.setPath("/WEB-INF/views/redirect.jsp");
         
