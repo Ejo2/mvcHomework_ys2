@@ -40,7 +40,7 @@ public class detailMemberService implements Action{
 				System.out.println("세션체크3");
 				request.setAttribute("memberlist", memberlist);
 				System.out.println("디테일 멤버 "+ memberlist);
-				forward.setPath("Ex03_Memberlist.jsp");
+				forward.setPath("/WEB-INF/views/Ex03_Memberlist.jsp");
 	    	}
 						
 		}catch (Exception e) {

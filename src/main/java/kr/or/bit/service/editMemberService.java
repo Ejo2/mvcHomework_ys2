@@ -37,7 +37,7 @@ public class editMemberService implements Action{
     
                 forward = new ActionForward();
                 forward.setRedirect(false);
-                forward.setPath("/Ex03_MemberEdit.jsp");
+                forward.setPath("/WEB-INF/views/Ex03_MemberEdit.jsp");
     
             }
             

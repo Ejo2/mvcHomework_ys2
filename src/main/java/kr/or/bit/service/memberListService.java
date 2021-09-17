@@ -17,7 +17,8 @@ public class memberListService implements Action{
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response){
     
-        ActionForward forward = null;
+        ActionForward forward = new ActionForward();
+        
         HttpSession session = request.getSession();
         
         try{
@@ -31,10 +32,9 @@ public class memberListService implements Action{
                 MemberDao dao = new MemberDao();
                 List<KoreaMember> memberlist = dao.getMemberList();
                 request.setAttribute("memberlist", memberlist);
-    
-                forward = new ActionForward();
+                System.out.println("회원리스트 띄우기");
                 forward.setRedirect(false);
-                forward.setPath("/Ex03_Memberlist.jsp");
+                forward.setPath("/WEB-INF/views/Ex03_Memberlist.jsp");
             }
             
         }catch (Exception e){

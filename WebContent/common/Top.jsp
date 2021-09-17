@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <a href="Ex02_JDBC_Main.jsp">Main</a>&nbsp;&nbsp;&nbsp;||
 <a href="login_page.do">Login</a>&nbsp;&nbsp;&nbsp;||  <%--login 메뉴가기!! 여기수정--%>
-<a href="Ex02_JDBC_JoinForm.jsp">Register</a>&nbsp;&nbsp;&nbsp;||
+<a href="Join_page.do">Register</a>&nbsp;&nbsp;&nbsp;||
 <a href="#">Intro</a>&nbsp;&nbsp;&nbsp;||
 <a href="#">Intro</a>&nbsp;&nbsp;&nbsp;
 

@@ -88,7 +88,7 @@
                         </tr>
                         <tr>
                               <td colspan="2">
-                                    <a href="Ex03_Memberlist.jsp">목록가기</a>
+                                    <a href="memberList.do">목록가기</a>
                               </td>
                         </tr>
                   </table>

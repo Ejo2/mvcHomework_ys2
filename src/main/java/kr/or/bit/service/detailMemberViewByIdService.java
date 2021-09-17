@@ -46,7 +46,7 @@ public class detailMemberViewByIdService implements Action{
                 
                 forward.setRedirect(false);
                 System.out.println("서비스 111");
-                forward.setPath("/Ex03_MemberDetail.jsp");
+                forward.setPath("/WEB-INF/views/Ex03_MemberDetail.jsp");
                 System.out.println("서비스 222");
             }
         }catch (Exception e){

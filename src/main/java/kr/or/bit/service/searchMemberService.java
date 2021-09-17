@@ -36,7 +36,7 @@ public class searchMemberService implements Action{
     
                 forward = new ActionForward();
                 forward.setRedirect(false);
-                forward.setPath("/Ex03_MemberSearch.jsp");
+                forward.setPath("/WEB-INF/views/Ex03_MemberSearch.jsp");
             }
 
         }catch (Exception e){
