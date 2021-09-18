@@ -25,7 +25,7 @@ public class searchMemberService implements Action{
                 //강제로 다른 페이지 이동
                 //forward.setPath("/WEB-INF/views/memoview.jsp");
                 //out.print("<script>location.href='Ex02_JDBC_Login.jsp'</script>");
-                forward.setPath("Ex02_JDBC_Login.jsp"); //TODO 로그인뷰 Path 넣어야
+                forward.setPath("/WEB-INF/views/Ex02_JDBC_Login.jsp"); //TODO 로그인뷰 Path 넣어야
             }else{
                 MemberDao dao = new MemberDao();
                 System.out.println(request.getParameter("se"));

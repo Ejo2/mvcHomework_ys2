@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.rmi.server.UnicastRemoteObject;
 
 
 @WebServlet("*.do")
@@ -37,12 +36,12 @@ public class FrontMemoController extends HttpServlet{
             //UI+로직
             action = new joinMemberService();
             forward = action.execute(request, response);
-          /////////////예솔 추가
-        }else if(url_Command.equals("/Join_page.do")){
-  
+            /////////////예솔 추가
+        }else if (url_Command.equals("/Join_page.do")){
+            
             action = new JoinPageService();
             forward = action.execute(request, response);
-
+            
             ////////////서정
         }else if (url_Command.equals("/login_page.do")){
             action = new LoginPageService();
@@ -59,7 +58,7 @@ public class FrontMemoController extends HttpServlet{
             forward = action.execute(request, response);
             System.out.println("로그아웃 실행");
             
-            //지혜
+            
         }else if (url_Command.equals("/deleteMember.do")){
             
             action = new deleteMemberService();
@@ -84,19 +83,19 @@ public class FrontMemoController extends HttpServlet{
             action = new editMemberService();
             forward = action.execute(request, response);
             System.out.println("editMember 실행");
-    
+            
         }else if (url_Command.equals("/editMemberOk.do")){
             action = new editOkMemberService();
             forward = action.execute(request, response);
             System.out.println("editMemberOk 실행");
-    
+            
         }else if (url_Command.equals("/detailMemberViewById.do")){
             action = new detailMemberViewByIdService();
             System.out.println("서비스 333");
             forward = action.execute(request, response);
             System.out.println("서비스 444");
             System.out.println("detailMemberViewById 실행");
-    
+            
         }else if (url_Command.equals("/memberList.do")){
             action = new memberListService();
             forward = action.execute(request, response);

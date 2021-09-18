@@ -12,11 +12,11 @@
    	}
    
     </style>
-
      <div class="main-panel">
 		<nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
+                    
                     <ul class="nav navbar-nav navbar-left">
                         <li class="active">
                             <a href="Ex02_JDBC_Main.jsp">
@@ -24,17 +24,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Ex02_JDBC_Login.jsp">
+                            <a href="login_page.do">
                                 <p><i class="pe-7s-user"></i> LOGIN</p>
                             </a>
                         </li>
                         <li>
-                            <a href="Ex02_JDBC_JoinForm.jsp">
+                            <a href="Join_page.do">
                                 <p><i class="pe-7s-note2"></i> REGISTER</p>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="logout.do">
                                 <p>LOG OUT</p>
                             </a>
                         </li>
@@ -42,4 +42,6 @@
                 </div>
             </div>
         </nav>
+     </div>
+
          

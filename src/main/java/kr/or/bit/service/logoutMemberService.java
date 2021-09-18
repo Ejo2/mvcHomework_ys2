@@ -18,8 +18,8 @@ public class logoutMemberService implements Action{
 
          ActionForward forward = new ActionForward();
 
-         forward.setRedirect(true);
-         forward.setPath("Ex02_JDBC_Login.jsp");
+         forward.setRedirect(false);//TODO false 로 바꿨습니다.
+         forward.setPath("/WEB-INF/views/Ex02_JDBC_Login.jsp");
 
          return forward;
     }
