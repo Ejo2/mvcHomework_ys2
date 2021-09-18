@@ -14,7 +14,7 @@
       
       
       <!-- Bootstrap core CSS     -->
-      <link href="/assets/css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
       
       <!-- Animation library for notifications   -->
       <link href="assets/css/animate.min.css" rel="stylesheet"/>
@@ -37,6 +37,10 @@
             }
       </style>
 </head>
+
+<body>
+
+<div class="wrapper">
       <div class="sidebar wrapper" data-color="purple" data-image="assets/img/sidebar-5.jpg">
             
             <div class="sidebar-wrapper">
@@ -103,5 +107,3 @@
           
      });
 </script>
-
-</html>
