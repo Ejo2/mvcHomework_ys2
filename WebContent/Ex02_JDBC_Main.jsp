@@ -31,28 +31,6 @@
                         </c:if>
 
                   </c:if>
-                  
-                  
-<%--                  <c:if test="${sessionScope.userid==null}">--%>
-<%--                        사이트 방문을 환영합니다 ^^ <br>회원가입을 부탁드려요.--%>
-<%--                  </c:if>--%>
-            <%--        <%--%>
-            <%--            String id = null;--%>
-            <%--            id = (String)session.getAttribute("userid");--%>
-            
-            <%--            if(id != null){--%>
-            <%--                //회원--%>
-            <%--                //지혜--%>
-            <%--                out.print(id + " 회원님 방가방가^^<br>");--%>
-            <%--                if(id.equals("admin")){--%>
-            <%--                    out.print("<a href='Ex03_Memberlist.jsp'>회원관리</a>");--%>
-            <%--                }--%>
-            <%--            }else{--%>
-            <%--                //로그인 하지 않은 사용자--%>
-            <%--                //메인 페이지는 회원만 볼수 있어요 (강제 링크 추가)--%>
-            <%--                out.print("사이트 방문을 환영합니다 ^^ <br>회원가입 좀 하지 ...");--%>
-            <%--            }--%>
-            <%--        %>--%>
       </div>
 </div>
 
