@@ -14,7 +14,7 @@ public class MemberDao{
     public ArrayList<KoreaMember> getMemberList() throws SQLException{
         Connection conn = ConnectionHelper.getConnection("oracle");
         
-        PreparedStatement pstmt = null;
+        PreparedStatement pstmt;
         String sql = "SELECT ID,IP FROM KOREAMEMBER";
         pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
