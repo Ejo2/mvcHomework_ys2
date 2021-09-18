@@ -33,9 +33,11 @@ public class FrontMemoController extends HttpServlet{
         ActionForward forward = null;
         
         if (url_Command.equals("/JoinMember.do")){ //글쓰기 처리
+            
             //UI+로직
             action = new joinMemberService();
             forward = action.execute(request, response);
+            
             /////////////예솔 추가
         }else if (url_Command.equals("/Join_page.do")){
 

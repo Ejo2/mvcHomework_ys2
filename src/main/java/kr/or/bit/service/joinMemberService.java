@@ -23,7 +23,7 @@ public class joinMemberService implements Action{
     	m.setAge(Integer.parseInt(request.getParameter("age")));
     	m.setGender(request.getParameter("gender"));
     	m.setEmail(request.getParameter("email"));
-    	m.setIp( request.getRemoteAddr());
+    	m.setIp(request.getRemoteAddr());
     	
     	MemberDao dao = new MemberDao();
     	int result = dao.joinMember(m);
@@ -32,10 +32,10 @@ public class joinMemberService implements Action{
 		String url = "";
 		if (result > 0) {
 			msg = "등록성공";
-			url = "Ex02_JDBC_Login.jsp";
+			url = "Ex02_JDBC_Main.jsp";
 		} else {
 			msg = "등록실패";
-			url = "Ex02_JDBC_JoinForm.jsp";
+			url = "/WEB-INF/views/Ex02_JDBC_JoinForm.jsp";
 		}
 
 		request.setAttribute("board_msg", msg);

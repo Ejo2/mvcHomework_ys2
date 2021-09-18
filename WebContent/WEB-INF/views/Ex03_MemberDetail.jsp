@@ -29,20 +29,7 @@
       <meta charset="UTF-8">
       <title>Insert title here</title>
       <style type="text/css">
-            table {
-                  border: solid 2px black;
-                  border-collapse: collapse;
-            }
-            
-            tr {
-                  border: solid 1px blue;
-                  background-color: white;
-                  color: black;
-            }
-            
-            td {
-                  border: solid 1px red;
-            }
+      
       </style>
 </head>
 <body>
