@@ -27,7 +27,7 @@
             id = (String)session.getAttribute("userid");
 
             if(id != null){
-                //회원 //지혜
+                //회원
                 //지혜
                 out.print(id + " 회원님 방가방가^^<br>");
                 if(id.equals("admin")){
