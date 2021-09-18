@@ -27,7 +27,8 @@
                   <c:if test="${sessionScope.userid !=null}">
                         ${sessionScope.userid}회원님 안녕하세요^^<br>
                         <c:if test="${sessionScope.userid=='admin'}">
-                              <a href='memberList.do'>회원관리</a>
+
+                              <a href="memberList.do"><input type="button" class="btn btn-info btn-fill pull-right" value="회원관리"></a>
                         </c:if>
 
                   </c:if>
