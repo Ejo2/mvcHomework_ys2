@@ -1,17 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<a href="Ex02_JDBC_Main.jsp">Main</a>&nbsp;&nbsp;&nbsp;||
-<a href="login_page.do">Login</a>&nbsp;&nbsp;&nbsp;||  <%--login 메뉴가기!! 여기수정--%>
-<a href="Join_page.do">Register</a>&nbsp;&nbsp;&nbsp;||
-<a href="#">Intro</a>&nbsp;&nbsp;&nbsp;||
-<a href="#">Intro</a>&nbsp;&nbsp;&nbsp;
+    
+    <style>
+    @media screen and (min-width: 991px) { 
+    	.navbar-header{
+    		float: right;
+    	}
+    }
+   	.navbar-header{
+   		clear:both 
+   	}
+   
+    </style>
 
-<%
-	if(session.getAttribute("userid") != null){
-		out.print("<b>[ " + session.getAttribute("userid") +" ]</b> 로그인 상태");
-		out.print("<a href='logout.do'>[ 로그아웃 ]</a>");
-	}else{
-		out.print("<b>[로그인 하지 않으셨네요]</b>");
-		out.print("<a href='login_page.do'>[ 로그인 ]</a>");
-	}
-%>
+     <div class="main-panel">
+		<nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="active">
+                            <a href="Ex02_JDBC_Main.jsp">
+                                <p> <i class="pe-7s-graph"></i> MAIN</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Ex02_JDBC_Login.jsp">
+                                <p><i class="pe-7s-user"></i> LOGIN</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Ex02_JDBC_JoinForm.jsp">
+                                <p><i class="pe-7s-note2"></i> REGISTER</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p>LOG OUT</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+         

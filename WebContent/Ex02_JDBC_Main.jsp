@@ -1,81 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    pageEncoding="UTF-8"%>
+ 
+<jsp:include page="common/Left.jsp"></jsp:include>
 
-<!DOCTYPE html>
-<html>
-<head>
-      <meta charset="UTF-8">
-      <title>Insert title here</title>
-      <style type="text/css">
-            table {
-                  border          : solid 2px black;
-                  border-collapse : collapse;
-            }
-            
-            tr {
-                  border           : solid 1px blue;
-                  background-color : white;
-                  color            : black;
-            }
-            
-            td {
-                  border : solid 1px red;
-            }
-      </style>
-</head>
-<body>
-<table
-        style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
-      <tr>
-            <td colspan="2">
-                  <jsp:include page="/common/Top.jsp"></jsp:include>
-            </td>
-      </tr>
-      <tr>
-            <td style="width: 200px">
-                  <jsp:include page="/common/Left.jsp"></jsp:include>
-            </td>
-            <td style="width: 700px">
-                  <!-- MAIN PAGE CONTENT  -->
-      
-                  <c:set var="userid" value="${sessionScope.userid}"/>
-                  <c:if test="${userid !=null}" var="userSessionOk">
-                        
-                        ${userid} 회원님 방가방가^^<br>
-                        <c:if test="${userid =='admin'}">
-                              <a href="memberList.do">회원관리</a>
-                        </c:if>
-                  </c:if>
-                  <c:if test="${userid==null}" var="userSessionNo">
-                        사이트 방문을 환영합니다^^ <br>회원가입좀 하지?..
-                  </c:if>
-                  
-<%--                  <%--%>
-<%--                        String id = null;--%>
-<%--                        id = (String) session.getAttribute("userid");--%>
-<%--                        --%>
-<%--                        if (id != null){--%>
-<%--                              //회원--%>
-<%--                              out.print(id + " 회원님 방가방가^^<br>");--%>
-<%--                              if (id.equals("admin")){--%>
-<%--                                    out.print("<a href='Ex03_Memberlist.jsp'>회원관리</a>");--%>
-<%--                              }--%>
-<%--                        }else{--%>
-<%--                              //로그인 하지 않은 사용자--%>
-<%--                              //메인 페이지는 회원만 볼수 있어요 (강제 링크 추가)--%>
-<%--                              out.print("사이트 방문을 환영합니다 ^^ <br>회원가입 좀 하지 ...");--%>
-<%--                        }--%>
-<%--                  %>--%>
-            </td>
-      </tr>
-      <tr>
-            <td colspan="2">
-                  <jsp:include page="/common/Bottom.jsp"></jsp:include>
-            </td>
-      </tr>
-</table>
-</body>
-</html>
+<jsp:include page="common/Top.jsp"></jsp:include>
+<style>
 
+	#mainimg{
+		width: 50%;
+		margin : 0 auto;
+		padding-top: 30px; 
+		
+	}
+	#mainimg  > img{
+		width: 100%;
+		margin: 0 auto;
+	}
+</style>
+ <div class="content">
+    <div class="container-fluid" id="mainimg">
+    	<img src="images/main.png">
+    	<p style="text-align: center; padding-top: 10px">Hello Welcome to 2조 Homepage</p>
+    </div>
+</div>
 
+ <div>
+    <jsp:include page="common/Bottom.jsp"></jsp:include>
+ </div>

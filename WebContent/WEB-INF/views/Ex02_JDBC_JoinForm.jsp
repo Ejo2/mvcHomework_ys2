@@ -1,30 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-table {
-	border: solid 2px black;
-	border-collapse: collapse;
-}
-/*fdfd*/
-tr {
-	border: solid 1px blue;
-	background-color: white;
-	color: black;
-}
+	
+<jsp:include page="common/Left.jsp"></jsp:include>
 
-td {
-	border: solid 1px red;
-}
-</style>
+<jsp:include page="common/Top.jsp"></jsp:include>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-
 $(function() {
   	$('#joinForm').submit(function() {
 	   //alert("가입");
@@ -52,69 +35,82 @@ $(function() {
    
   });
  });
-
 </script>
-</head>
-<body>
-	<table
-		style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
-		<tr>
-			<td colspan="2">
-				<jsp:include page="/common/Top.jsp"></jsp:include>
-			</td>
-		</tr>
-		<tr>
-			<td style="width: 200px">
-				<jsp:include page="/common/Left.jsp"></jsp:include>
-			</td>
-			<td style="width: 700px">
-				<form action="JoinMember.do" method="post" name="joinForm" id="joinForm">
-					<h3 style="text-align: center;">회원가입</h3>
-					<div>
-						<table
-							style="width: 400px; height: 200px; margin-left: auto; margin-right: auto;">
-							<tr>
-								<th>ID:</th>
-								<td><input type="text" name="id" id="id"></td>
-							</tr>
-							<tr>
-								<th>PWD:</th>
-								<td><input type="password" name="pwd" id="pwd"></td>
-							</tr>
-							<tr>
-								<th>Name:</th>
-								<td><input type="text" name="mname" id="mname"></td>
-							</tr>
-							<tr>
-								<th>age:</th>
-								<td><input type="text" name="age" id="age" maxlength="3"></td>
-							</tr>
-							<tr>
-								<th>Gender:</th>
-								<td><input type="radio" name="gender" id="gender" value="여"
-									checked>여자 <input type="radio" name="gender"
-									id="gender" value="남">남자</td>
-							</tr>
-							<tr>
-								<th>Email:</th>
-								<td><input type="text" name="email" id="email"></td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<input type="submit" value="회원가입">
-									<input type="reset" value="취소"></td>
-							</tr>
-						</table>
 
-					</div>
-				</form>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<jsp:include page="/common/Bottom.jsp"></jsp:include>
-			</td>
-		</tr>
-	</table>
-</body>
-</html>
+  <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">REGISTER</h4>
+                            </div>
+                            <div class="content">
+                                <form action="JoinMember.do" method="post" name="joinForm" id="joinForm">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>ID</label>
+                                                <input type="text" name="id" id="id" class="form-control" placeholder="UserID" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>PASSWORD</label>
+                                                <input type="password" name="pwd" id="pwd" class="form-control" placeholder="Pwd" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" name="mname" id="mname" class="form-control" placeholder="Name" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>AGE</label>
+                                                <input type="text" class="form-control" placeholder="Age" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>GENDER</label>
+                                                <br>
+                                                <input type="radio" name="gender" id="gender" value="여" checked class="">&nbsp;&nbsp;여자&nbsp;&nbsp; 
+                                                <input type="radio" name="gender" id="gender" value="남" class="">&nbsp;&nbsp;남자 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">             
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <input type="submit" class="btn btn-info btn-fill pull-right value="회원가입">
+									<input type="reset" class="btn btn-info btn-fill pull-left value="취소">
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+        <jsp:include page="common/Bottom.jsp"></jsp:include>
+        </div>
