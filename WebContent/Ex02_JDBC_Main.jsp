@@ -3,7 +3,7 @@
       <jsp:include page="/common/Left.jsp"></jsp:include>
 
       <jsp:include page="/common/Top.jsp"></jsp:include>
-
+<!-- 지혜지혜 -->
 <style>
 
 	#mainimg{
@@ -16,6 +16,7 @@
 		width: 100%;
 		margin: 0 auto;
 	}
+
 </style>
  <div class="content">
     <div class="container-fluid" id="mainimg">
@@ -26,7 +27,8 @@
             id = (String)session.getAttribute("userid");
 
             if(id != null){
-                //회원
+                //회원 //지혜
+                //지혜
                 out.print(id + " 회원님 방가방가^^<br>");
                 if(id.equals("admin")){
                     out.print("<a href='Ex03_Memberlist.jsp'>회원관리</a>");

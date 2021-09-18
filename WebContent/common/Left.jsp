@@ -69,6 +69,7 @@
                                     <p>REGISTER</p>
                               </a>
                         </li>
+
                   </ul>
             </div>
       </div>

@@ -94,14 +94,14 @@ $(function() {
                                     <div class="row">             
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Email address</label>
+                                                <%--@declare id="exampleinputemail1"--%><label for="exampleInputEmail1">Email address</label>
                                                 <input type="email" class="form-control" placeholder="Email">
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <input type="submit" class="btn btn-info btn-fill pull-right value="회원가입">
-									<input type="reset" class="btn btn-info btn-fill pull-left value="취소">
+                                    <input type="submit" class="btn btn-info btn-fill pull-right" value="회원가입">
+									<input type="reset" class="btn btn-info btn-fill pull-left" value="취소">
                                     <div class="clearfix"></div>
                                 </form>
                             </div>

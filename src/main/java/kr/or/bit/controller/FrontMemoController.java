@@ -38,12 +38,13 @@ public class FrontMemoController extends HttpServlet{
             forward = action.execute(request, response);
             /////////////예솔 추가
         }else if (url_Command.equals("/Join_page.do")){
-            
+
             action = new JoinPageService();
             forward = action.execute(request, response);
             
             ////////////서정
         }else if (url_Command.equals("/login_page.do")){
+            System.out.println("/login_page.do 실행중 컨트롤러");
             action = new LoginPageService();
             forward = action.execute(request, response);
         }else if (url_Command.equals("/login.do")){ //
