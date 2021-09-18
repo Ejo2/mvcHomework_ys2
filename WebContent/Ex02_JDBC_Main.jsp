@@ -1,47 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-      <jsp:include page="/common/Left.jsp"></jsp:include>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="/common/Left.jsp"></jsp:include>
 
-      <jsp:include page="/common/Top.jsp"></jsp:include>
+<jsp:include page="/common/Top.jsp"></jsp:include>
 <!-- 지혜지혜 -->
 <style>
-
-	#mainimg{
-		width: 50%;
-		margin : 0 auto;
-		padding-top: 30px; 
-		
-	}
-	#mainimg  > img{
-		width: 100%;
-		margin: 0 auto;
-	}
+      
+      #mainimg {
+            width       : 50%;
+            margin      : 0 auto;
+            padding-top : 30px;
+            
+      }
+      
+      #mainimg > img {
+            width  : 100%;
+            margin : 0 auto;
+      }
 
 </style>
- <div class="content">
-    <div class="container-fluid" id="mainimg">
-    	<img src="images/main.png">
-    	<p style="text-align: center; padding-top: 10px">Hello Welcome to 2조 Homepage</p>
-        <%
-            String id = null;
-            id = (String)session.getAttribute("userid");
+<div class="content">
+      <div class="container-fluid" id="mainimg">
+            <img src="images/main.png">
+            <p style="text-align: center; padding-top: 10px">Hello Welcome to 2조 Homepage</p>
+                  <c:if test="${sessionScope.userid !=null}">
+                        ${sessionScope.userid}회원님 안녕하세요^^<br>
+                        <c:if test="${sessionScope.userid=='admin'}">
+                              <a href='memberList.do'>회원관리</a>
+                        </c:if>
 
-            if(id != null){
-                //회원
-                //지혜
-                out.print(id + " 회원님 방가방가^^<br>");
-                if(id.equals("admin")){
-                    out.print("<a href='Ex03_Memberlist.jsp'>회원관리</a>");
-                }
-            }else{
-                //로그인 하지 않은 사용자
-                //메인 페이지는 회원만 볼수 있어요 (강제 링크 추가)
-                out.print("사이트 방문을 환영합니다 ^^ <br>회원가입 좀 하지 ...");
-            }
-        %>
-    </div>
+                  </c:if>
+                  
+                  
+<%--                  <c:if test="${sessionScope.userid==null}">--%>
+<%--                        사이트 방문을 환영합니다 ^^ <br>회원가입을 부탁드려요.--%>
+<%--                  </c:if>--%>
+            <%--        <%--%>
+            <%--            String id = null;--%>
+            <%--            id = (String)session.getAttribute("userid");--%>
+            
+            <%--            if(id != null){--%>
+            <%--                //회원--%>
+            <%--                //지혜--%>
+            <%--                out.print(id + " 회원님 방가방가^^<br>");--%>
+            <%--                if(id.equals("admin")){--%>
+            <%--                    out.print("<a href='Ex03_Memberlist.jsp'>회원관리</a>");--%>
+            <%--                }--%>
+            <%--            }else{--%>
+            <%--                //로그인 하지 않은 사용자--%>
+            <%--                //메인 페이지는 회원만 볼수 있어요 (강제 링크 추가)--%>
+            <%--                out.print("사이트 방문을 환영합니다 ^^ <br>회원가입 좀 하지 ...");--%>
+            <%--            }--%>
+            <%--        %>--%>
+      </div>
 </div>
 
- <div>
-    <jsp:include page="/common/Bottom.jsp"></jsp:include>
- </div>
+<div>
+      <jsp:include page="/common/Bottom.jsp"></jsp:include>
+</div>
