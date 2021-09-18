@@ -6,6 +6,9 @@
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 
+<jsp:include page="/common/Top.jsp"></jsp:include>
+<jsp:include page="/common/Left.jsp"></jsp:include>
+
 <%
       /*
           회원 상세 페이지 (id 컬럼 PK)
@@ -26,6 +29,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <link rel="stylesheet" type="text/css" href="/assets/css/member.css">
       <meta charset="UTF-8">
       <title>Insert title here</title>
       <style type="text/css">
@@ -35,56 +39,58 @@
 <body>
 <c:set var="member" value="${requestScope.member}"></c:set>
 
-<table
-        style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
-      <tr>
-            <td colspan="2">
-                  <jsp:include page="/common/Top.jsp"></jsp:include>
-            </td>
-      </tr>
-      <tr>
-            <td style="width: 200px">
-                  <jsp:include page="/common/Left.jsp"></jsp:include>
-            </td>
-            <td style="width: 700px">
-                  
-                  <table style="width: 400px;height: 100px;margin-left: auto;margin-right: auto;">
+<%--<table
+        style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">--%>
+
+
+
+<table class="type10" id="non-style">
+
+      <thead>
+      <th><h3><b>${member.id}님의 상세페이지</b></h3></th>
+
+      </thead>
+            <td>
+                  <table class="type11">
+
                         <tr>
-                              <td style="width:100px">아이디</td>
-                              <td style="width:100px">${member.id}</td>
+                              <td>아이디</td>
+                              <td>${member.id}</td>
                         </tr>
                         <tr>
-                              <td style="width:100px">비번</td>
-                              <td style="width:100px">${member.pwd}</td>
+                              <td>비번</td>
+                              <td>${member.pwd}</td>
                         </tr>
                         <tr>
-                              <td style="width:100px">이름</td>
-                              <td style="width:100px">${member.name}</td>
+                              <td>이름</td>
+                              <td>${member.name}</td>
                         </tr>
                         <tr>
-                              <td style="width:100px">나이</td>
-                              <td style="width:100px">${member.age}</td>
+                              <td>나이</td>
+                              <td>${member.age}</td>
                         </tr>
                         <tr>
-                              <td style="width:100px">성별</td>
-                              <td style="width:100px">${member.gender}</td>
+                              <td>성별</td>
+                              <td>${member.gender}</td>
                         </tr>
                         <tr>
-                              <td style="width:100px">이메일</td>
-                              <td style="width:100px">${member.email}</td>
+                              <td>이메일</td>
+                              <td>${member.email}</td>
                         </tr>
-                        <tr>
-                              <td colspan="2">
+                        <tr id="non-style1">
+                              <td>
+                                    <a href="memberList.do"><input type="button" class="btn btn-info btn-fill pull-right" value="회원 목록 페이지"></a>
                                     <a href="memberList.do">목록가기</a>
                               </td>
                         </tr>
                   </table>
-            
+
             </td>
-      </tr>
-      <tr>
-            <td colspan="2"><jsp:include page="/common/Bottom.jsp"></jsp:include></td>
-      </tr>
+
+
+            <jsp:include page="/common/Bottom.jsp"></jsp:include>
+
+
 </table>
 </body>
 </html>

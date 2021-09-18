@@ -25,6 +25,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="/assets/css/member.css">
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<style type="text/css">
@@ -32,20 +33,12 @@
 	</style>
 </head>
 <body>
-<div class="textbox" >
+<div class="textbox">
 	<div class=”table-responsive“>
-<table class="type09" style="width:80%; margin-left: auto; margin-right: auto;">
-	<%--<table style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">--%>
-	<%--      <tr>--%>
-	<%--            <td colspan="2">--%>
-	<%--            </td>--%>
-	<%--      </tr>--%>
-	<tr>
-		<td style="width: 50%">
-
-				<table style="margin-left: auto;margin-right: auto">
-					<%--<table style="width: 400px;height: 100px;margin-left: auto;margin-right: auto">--%>
-
+		<table class="type09">
+			<tr>
+				<td>
+					<table>
 						<thead>
 						<h2>회원리스트</h2>
 						<tr>
@@ -55,40 +48,39 @@
 							<th scope="cols">수정</th>
 						</tr>
 						</thead>
-				<c:set var="memberlist" value="${requestScope.memberlist}"/>
-				<c:forEach var="member" items="${memberlist}">
+						<c:set var="memberlist" value="${requestScope.memberlist}"/>
+						<c:forEach var="member" items="${memberlist}">
+							<tr>
+								<td>
+									<a href="detailMemberViewById.do?id=${member.id}">${member.id}</a>
+								</td>
+								<td>${member.ip}</td>
+								<td>
+									<a href="deleteMember.do?id=${member.id}">[삭제]</a>
+								</td>
+								<td>
+									<a href="editMember.do?id=${member.id}">[수정]</a>
+								</td>
+							</tr>
+						</c:forEach>
+					</table>
+
+					<br>
+					<form action="searchMember.do" method="post">
+						<input type="text" name="search" placeholder="회원명">
+						<input type="submit" class="btn btn-info btn-fill pull-right" value="검색하기">
+					</form>
+
+
 					<tr>
-						<td width="20%">
-							<a href="detailMemberViewById.do?id=${member.id}">${member.id}</a>
-						</td>
-						<td width="50%">${member.ip}</td>
-						<td>
-							<a href="deleteMember.do?id=${member.id}">[삭제]</a>
-						</td>
-						<td>
-							<a href="editMember.do?id=${member.id}">[수정]</a>
-						</td>
+					<td>
+						<jsp:include page="/common/Bottom.jsp"></jsp:include>
+					</td>
 					</tr>
-				</c:forEach>
-			</table>
-			</div>
-		<br>
-
-
-			<form action="searchMember.do" method="post">
-				<input type="text"  name="search" placeholder="회원명">
-				<input type="submit" class="btn btn-info btn-fill pull-right" value="검색하기">
-			</form>
-
-
-		</td>
-	</tr>
-	<tr>
-		<td >
-			<jsp:include page="/common/Bottom.jsp"></jsp:include>
-		</td>
-	</tr>
-</table>
+				</td>
+			</tr>
+		</table>
+	</div>
 </div>
 </body>
 </html>
