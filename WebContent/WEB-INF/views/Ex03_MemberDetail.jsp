@@ -80,7 +80,7 @@
                         <tr id="non-style1">
                               <td>
                                     <a href="memberList.do"><input type="button" class="btn btn-info btn-fill pull-right" value="회원 목록 페이지"></a>
-                                    <a href="memberList.do">목록가기</a>
+
                               </td>
                         </tr>
                   </table>

@@ -104,19 +104,3 @@
       <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
       <script src="assets/js/demo.js"></script>
 
-      <script type="text/javascript">
-            $(document).ready(function() {
-
-                  demo.initChartist();
-
-                  $.notify({
-                        icon: 'pe-7s-gift',
-                        message: "Welcome to 2조 <br> 회원가입 페이지에 오신걸 환영합니다:)"
-
-                  }, {
-                        type: 'info',
-                        timer: 4000
-                  });
-
-            });
-      </script>

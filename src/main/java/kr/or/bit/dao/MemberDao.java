@@ -115,14 +115,16 @@ public class MemberDao{
         
         try{
             conn = ConnectionHelper.getConnection("oracle");
-            sql = "UPDATE KOREAMEMBER SET NAME=? , AGE=? , GENDER=? , EMAIL = ? , IP = ? WHERE ID=?";
+            sql = "UPDATE KOREAMEMBER SET NAME=?, AGE=? , GENDER=? , EMAIL = ? , IP = ?, PWD=? WHERE ID=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, m.getName());
             pstmt.setInt(2, m.getAge());
             pstmt.setString(3, m.getGender());
             pstmt.setString(4, m.getEmail());
             pstmt.setString(5, m.getIp());
-            pstmt.setString(6, m.getId());
+            pstmt.setString(6, m.getPwd());
+            pstmt.setString(7, m.getId());
+
             resultRow = pstmt.executeUpdate();
         }catch (Exception e){
             System.out.println(e.getMessage());

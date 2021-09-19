@@ -17,6 +17,7 @@ public class editOkMemberService implements Action{
         
         ActionForward forward = new ActionForward();
         String id = request.getParameter("id");
+        String pwd = request.getParameter("pwd");
         String name = request.getParameter("name");
         int age = Integer.parseInt(request.getParameter("age"));
         String email = request.getParameter("email");
@@ -27,6 +28,7 @@ public class editOkMemberService implements Action{
         KoreaMember dto = new KoreaMember();
         
         dto.setId(id);
+        dto.setPwd(pwd);
         dto.setName(name);
         dto.setAge(age);
         dto.setEmail(email);
