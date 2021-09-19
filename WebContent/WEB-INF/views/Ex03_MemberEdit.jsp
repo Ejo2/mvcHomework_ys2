@@ -45,111 +45,135 @@
 <%--		rs.next(); //1건 데이터가 있다면 전제조건--%>
 <%--%>	--%>
 
-<!DOCTYPE html>
-<html>
-<head>
-      <meta charset="UTF-8">
-      <title>Insert title here</title>
-      <style type="text/css">
-            table {
-                  border          : solid 2px black;
-                  border-collapse : collapse;
-            }
-            
-            tr {
-                  border           : solid 1px blue;
-                  background-color : white;
-                  color            : black;
-            }
-            
-            td {
-                  border : solid 1px red;
-            }
-      </style>
-</head>
-<body>
-<table
-        style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
-      <tr>
-            <td colspan="2">
-                  <jsp:include page="/common/Top.jsp"></jsp:include>
-            </td>
-      </tr>
-      <tr>
-            <td style="width: 200px">
-                  <jsp:include page="/common/Left.jsp"></jsp:include>
-            </td>
-            <td style="width: 700px">
-                  <form action="editMemberOk.do" method="post">
-                        <c:set var="member" value="${requestScope.member}"/>
-                        
-                        <h3 style="text-align: center;">회원수정</h3>
-                        <div>
-                              <table
-                                      style="width: 400px; height: 200px; margin-left: auto; margin-right: auto;">
-                                    <tr>
-                                          <td>아이디</td>
-                                          <td>
-                                                <input type="text" name="id" value="${member.id}" readonly>
-                                          </td>
-                                    </tr>
-                                    <tr>
-                                          <td>비번</td>
-                                          <td>${member.pwd}</td>
-                                    </tr>
-                                    <tr>
-                                          <td>이름</td>
-                                          <td>
-                                                <input type="text" name="name" value="${member.name}" style="background-color: yellow">
-                                          </td>
-                                    </tr>
-                                    <tr>
-                                          <td>나이</td>
-                                          <td>
-                                                <input type="text" name="age" value="${member.age}" style="background-color: yellow">
-                                          </td>
-                                    </tr>
-                                    <tr>
-                                          <td>성별</td>
-                                          <td>
-                                                [${member.gender}]
-                                                <input type="radio" name="gender" id="gender" value="여"
-                                                <c:if test="${member.gender=='여'}">
-                                                        checked
-                                                </c:if>>여자
-                                                       
-                                                
-                                                
-                                                
-                                                <input type="radio" name="gender" id="gender" value="남"
-                                                <c:if test="${member.gender=='남'}">
-                                                       checked
-                                                </c:if>>남자
+<jsp:include page="/common/Left.jsp"></jsp:include>
 
-                                          </td>
-                                    </tr>
-                                    <tr>
-                                          <td>이메일</td>
-                                          <td>
-                                                <input type="text" name="email" value="${member.email}" style="background-color: yellow">
-                                          </td>
-                                    </tr>
-                                    <tr>
-                                          <td colspan="2">
-                                                <input type="submit" value="수정하기">
-                                                <a href='detailMemberView.do'>리스트이동</a></td>
-                              </table>
-                        
+<jsp:include page="/common/Top.jsp"></jsp:include>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+      $(function() {
+            $('#joinForm').submit(function() {
+                  //alert("가입");
+                  if ($('#id').val() == "") { // 아이디 검사
+                        alert('ID를 입력해 주세요.');
+                        $('#id').focus();
+                        return false;
+                  } else if ($('#pwd').val() == "") { // 비밀번호 검사
+                        alert('PWD를 입력해 주세요.');
+                        $('#pwd').focus();
+                        return false;
+                  } else if ($('#mname').val() == "") { // 이름 검사
+                        alert('mname를 입력해 주세요.');
+                        $('#mname').focus();
+                        return false;
+                  } else if ($('#age').val() == "") { // 나이 검사
+                        alert('age를 입력해 주세요.');
+                        $('#age').focus();
+                        return false;
+                  } else if ($('#email').val() == "") { // 우편번호
+                        alert('email를 입력해 주세요.');
+                        $('#email').focus();
+                        return false;
+                  }
+
+            });
+      });
+</script>
+
+<div class="content">
+      <div class="container-fluid">
+            <div class="row">
+                  <div class="col-md-8">
+                        <div class="card">
+                              <div class="header">
+                                    <h4 class="title">회원수정</h4>
+                              </div>
+                              <div class="content">
+                                    <form action="editMemberOk.do" method="post">
+                                          <c:set var="member" value="${requestScope.member}"/>
+                                          <div class="row">
+                                                <div class="col-md-5">
+                                                      <div class="form-group">
+                                                            <label>ID</label>
+                                                            <input type="text" name="id" value="${member.id}" readonly>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="row">
+                                                <div class="col-md-5">
+                                                      <div class="form-group">
+                                                            <label>PASSWORD</label>
+                                                            <div>${member.pwd}</div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="row">
+                                                <div class="col-md-4">
+                                                      <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" name="name" value="${member.name}" >
+                                                      </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                      <div class="form-group">
+                                                            <label>AGE</label>
+                                                            <input type="text" name="age" value="${member.age}" >
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="row">
+                                                <div class="col-md-4">
+                                                      <div class="form-group">
+                                                            <label>GENDER</label>
+                                                            <div>
+                                                                  [${member.gender}]
+                                                                  &nbsp;
+                                                                  <input type="radio" name="gender" id="gender" value="여"
+                                                                  <c:if test="${member.gender=='여'}">
+                                                                         checked
+                                                                  </c:if>>여자
+                                                                  &nbsp;
+
+
+
+                                                                  <input type="radio" name="gender" id="gender" value="남"
+                                                                  <c:if test="${member.gender=='남'}">
+                                                                         checked
+                                                                  </c:if>>남자
+
+
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="row">
+                                                <div class="col-md-4">
+                                                      <div class="form-group">
+                                                            <label for="exampleInputEmail1">Email address</label>
+                                                            <input type="text" name="email" value="${member.email}" >
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <input class="btn btn-info btn-fill pull-right" type="submit" value="수정하기">
+
+                                          <a href='detailMemberView.do'>리스트이동</a>
+
+                                          <div class="clearfix"></div>
+                                    </form>
+                              </div>
                         </div>
-                  </form>
-            </td>
-      </tr>
-      <tr>
-            <td colspan="2">
-                  <jsp:include page="/common/Bottom.jsp"></jsp:include>
-            </td>
-      </tr>
-</table>
-</body>
-</html>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<div>
+      <jsp:include page="/common/Bottom.jsp"></jsp:include>
+</div>
 
